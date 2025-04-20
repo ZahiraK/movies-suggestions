@@ -1,0 +1,260 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #F2F2F2;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Impact', sans-serif;
+    color: #E63946;
+}
+
+
+header {
+    background-color: #101010;
+    padding: 20px 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #E63946;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: red;
+    transform: scale(1.1);
+}
+
+.hero {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("./images/backroundhome.jpg") no-repeat center center/cover;
+    padding: 120px 20px;
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.categories {
+    padding: 80px 20px;
+    background-color: #181818;
+    text-align: center;
+}
+
+.categories h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 40px;
+}
+
+.category-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.category-box {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 250px;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+.category-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    transition: opacity 0.3s ease;
+}
+
+.category-box:hover::before {
+    opacity: 0.8;
+}
+
+.category-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9);
+}
+
+.category-box h3 {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    font-weight: 700;
+    font-size: 1.8rem;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+.category-box p {
+    position: relative;
+    z-index: 2;
+    font-size: 1rem;
+    color: #D0D0D0;
+}
+
+
+.category-box a {
+    text-decoration: none;
+}
+
+.category-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    z-index: 1;
+}
+
+
+#action {
+    background-image: url('./images/actionhome.jpg');
+}
+
+#drama {
+    background-image: url('./images/dramahome.jpg');
+}
+
+#horror {
+    background-image: url('./images/horrorhome.jpg');
+}
+
+#animation {
+    background-image: url('./images/annimationhome.jpg');
+}
+
+#science-fiction {
+    background-image: url('./images/sciencefictionhome.jpg');
+}
+
+footer {
+    background-color: #101010;
+    color: #999;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+@media (max-width: 1024px) {
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .category-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .menu {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .menu li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #F2F2F2;
+    line-height: 1.6;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/contactbackround.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+header {
+    background-color: #101010;
+    padding: 20px 50px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #E63946;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li {
+    position: relative;
+}
+
+.menu li a {
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu li a:hover {
+    color: #ff6347;
+}
+
+
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 50px;
+    height: calc(100vh - 60px);
+}
+
+.contact-left {
+    flex: 1;
+    padding-right: 50px;
+    text-align: left;
+}
+
+.contact-left h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+}
+
+.contact-left p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #ddd;
+}
+
+.contact-form {
+    flex: 1;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #E63946;
+    text-transform: uppercase;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #333;
+    color: #F2F2F2;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background-color: #222;
+    border-color: #E63946;
+    outline: none;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #E63946;
+    border: none;
+    color: #FFF;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #FF8A00;
+}
+
+footer {
+    background-color: #101010;
+    color: #999;
+    text-align: center;
+    padding: 30px 20px;
+    position: relative;
+}
+
+footer p {
+    font-size: 14px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 55px;
+    }
+
+    .menu {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .menu li {
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    .contact-section {
+        flex-direction: column;
+        padding: 20px;
+        height: auto;
+    }
+
+    .contact-left {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .contact-left h2 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+    }
+
+    .contact-left p {
+        font-size: 1rem;
+    }
+
+    .contact-form {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem;
+        padding: 12px;
+    }
+
+    .contact-form button {
+        font-size: 1rem;
+        padding: 12px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+        padding: 20px 10px;
+    }
+}
